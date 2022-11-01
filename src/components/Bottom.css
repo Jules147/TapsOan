@@ -1,0 +1,79 @@
+#button {
+  height: 50px;
+  width: 80px;
+}
+
+#bottom {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+#where {
+  font-family: serif;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 24px;
+  color: #212529;
+  color: rgb(33, 37, 41);
+  text-shadow: rgb(170, 170, 170) 0px 4px 10px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#input {
+  flex-direction: column;
+  height: 90px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+  font-style: italic;
+  text-align: center;
+  box-shadow: unset;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px 0px 16px 0px;
+}
+
+input[name="searchbar"] {
+  height: 50px;
+  width: 300px;
+  text-align: center;
+  font-size: 23px;
+  font-family: serif;
+  font-weight: 900;
+}
+
+#whereNot {
+  font-family: serif;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 24px;
+
+  text-shadow: rgb(170, 170, 170) 0px 4px 10px;
+  display: block;
+  margin-bottom: 15px;
+
+  color: red;
+  animation: 1s blinker;
+  animation-iteration-count: 5;
+  font-weight: 900;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
