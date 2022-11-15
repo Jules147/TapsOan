@@ -3,18 +3,17 @@ import "./Bottom.css";
 
 const Bottom = (props) => {
   return (
-    <div id="bottom">
+    <div className="bottom">
       {props.err === false ? (
-        <pre id="where">Where are ye...?</pre>
+        <pre className="where">Where are ye...?</pre>
       ) : (
-        <pre id="whereNot">That's not a valid city</pre>
+        <pre className="whereNot">That's not a valid city</pre>
       )}
 
-      {/* <pre id="where">"Where are ye...?</pre> */}
       <input
         type="text"
         name="searchbar"
-        placeholder="Add city and press 'Enter'"
+        placeholder="Add city and 'Enter'"
         onKeyDown={(event) => {
           if (event.key === "Enter") {
             props.updateInput(event.target.value);

@@ -17,6 +17,8 @@ import Clear from "./images/clear.png";
 import Tapsoan from "./images/tapsoan.svg";
 import Tapsaaf from "./images/tapsaaf.svg";
 import "./Body.css";
+import WeatherDay from "./WeatherDay";
+import { Fragment } from "react/cjs/react.production.min";
 
 const now = new Date();
 const days = [
@@ -28,14 +30,6 @@ const days = [
   "Friday",
   "Saturday",
 ];
-
-// const now = new Date();
-
-// const today = days[dayIndex];
-// const todayPlusOne = days[dayIndex + 2];
-
-// const daysdayaftertomorrow = (daystomorrow + 1) % days.length;
-// const dayaftertomorrow = days[daysdayaftertomorrow];
 
 const Body = (props) => {
   const imageMap = {
@@ -63,92 +57,83 @@ const Body = (props) => {
 
   return (
     <>
-      <div id="mapcast">
-        <h3 id="dress">Dress Appropriately! </h3>
-        <div id="clothes">
+      <div className="mapcast">
+        <div className="clothes">
+          <h3 className="dress">Dress Appropriately!</h3>
           {props.weather.list[0].main.temp_max < 15 ? (
             <div>
-              {/* <img className={tapsoan} alt="" src={Tapsoan}></img> */}
               <img
                 className="tapsoan"
                 alt={props.weather.list[0].weather[0].description}
                 src={Tapsoan}
               ></img>
-              <pre className="taps">Get yer Tapsoan!!!</pre>
+              <pre className="getyer">Get yer Tapsoan!!!</pre>
             </div>
           ) : (
             <div>
-              {/* <img className={tapsaaf} alt="" src={Tapsaaf}></img> */}
-              <img className="tapsaaf" alt="" src={Tapsaaf}></img>
-              <pre className="taps">Get yer Tapsaaf!!!</pre>
+              <img
+                className="tapsaaf"
+                alt={props.weather.list[0].weather[0].description}
+                src={Tapsaaf}
+              ></img>
+              <pre className="getyer">Get yer Tapsaaf!!!</pre>
             </div>
           )}
         </div>
 
-        <h3 id="fore">Forecast: </h3>
-
-        <div id="forecast">
-          {props.weather &&
-            props.weather.list.map((item, index) => {
-              if (index === 0) {
-                return (
-                  <div key={index} className={"day"}>
-                    <h4>
-                      <b>{days[now.getDay()]}</b>
-                    </h4>
-                    <img
-                      id="futureImage"
-                      alt={item.weather[0].description}
-                      src={imageMap[item.weather[0].main]}
-                    />
-                    <h4>
-                      {" "}
-                      <b>{Math.round(item.main.temp_max)}°C</b>
-                    </h4>
-                  </div>
-                );
-              }
-              if (index === 8) {
-                return (
-                  <div key={index} className={"day"}>
-                    <h4>
-                      <b>
-                        {now.setTime(now.getTime() + 86400000) &&
-                          days[now.getDay()]}
-                      </b>
-                    </h4>
-                    <img
-                      id="futureImage"
-                      alt={item.weather[0].description}
-                      src={imageMap[item.weather[0].main]}
-                    />
-                    <h4>
-                      <b>{Math.round(item.main.temp_max)}°C</b>
-                    </h4>
-                  </div>
-                );
-              }
-              if (index === 16) {
-                return (
-                  <div key={index} className={"day"}>
-                    <h4>
-                      <b>
-                        {now.setTime(now.getTime() + 86400000) &&
-                          days[now.getDay()]}
-                      </b>
-                    </h4>
-                    <img
-                      id="futureImage"
-                      alt={item.weather[0].description}
-                      src={imageMap[item.weather[0].main]}
-                    />
-                    <h4>
-                      <b>{Math.round(item.main.temp_max)}°C</b>
-                    </h4>
-                  </div>
-                );
-              }
-            })}
+        <div className="forecast">
+          <div>
+            <h3 className="fore">Forecast: </h3>
+            <div className="days">
+              {props.weather &&
+                props.weather.list.map((item, index) => {
+                  const { description, main } = item.weather[0];
+                  const { temp_max } = item.main;
+                  if (index === 0) {
+                    return (
+                      <React.Fragment key={index}>
+                        <WeatherDay
+                          day={days[now.getDay()]}
+                          description={description}
+                          main={imageMap[main]}
+                          temp_max={Math.round(temp_max)}
+                        />
+                      </React.Fragment>
+                    );
+                  }
+                  if (index === 8) {
+                    return (
+                      <React.Fragment key={index}>
+                        <WeatherDay
+                          day={
+                            now.setTime(now.getTime() + 86400000) &&
+                            days[now.getDay()]
+                          }
+                          description={description}
+                          main={imageMap[main]}
+                          temp_max={Math.round(temp_max)}
+                        />
+                      </React.Fragment>
+                    );
+                  }
+                  if (index === 16) {
+                    return (
+                      <React.Fragment key={index}>
+                        <WeatherDay
+                          day={
+                            now.setTime(now.getTime() + 86400000) &&
+                            days[now.getDay()]
+                          }
+                          description={description}
+                          main={imageMap[main]}
+                          temp_max={Math.round(temp_max)}
+                        />
+                      </React.Fragment>
+                    );
+                  }
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </>

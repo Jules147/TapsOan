@@ -5,7 +5,7 @@ import Title from "./components/Title";
 import Schpeel from "./components/Schpeel";
 import Body from "./components/Body";
 import Bottom from "./components/Bottom";
-import Foot from "./components/Foot";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 // ok to store getApiURL in config.js file?
 import { getApiURL } from "./config";
@@ -39,20 +39,21 @@ const App = () => {
   useEffect(() => {
     getApiData();
   }, [input]);
-  if (!weather) return <p>Loading</p>;
 
+  if (!weather) return <p>Loading</p>;
+  const { main, weather: w } = weather.list[0];
   return (
     <>
       <Title input={input} />
-      <Header temp={weather.list[0].main.temp} />
+      <Header temp={main.temp} />
       <Schpeel
-        main={weather.list[0].weather[0].main}
+        main={w[0].main}
         // weather.main && weather.main.temp
-        temp={weather.list[0].main.temp}
+        temp={main.temp}
       />
       <Body weather={weather} />
       <Bottom updateInput={updateInput} err={err} />
-      <Foot />
+      <Footer />
     </>
   );
 };

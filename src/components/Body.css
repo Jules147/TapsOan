@@ -1,46 +1,26 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-#mapcast {
+.titles {
   display: flex;
-  margin-top: 4vh;
-  max-width: 400px;
+  justify-content: space-around;
 }
 
-#dress {
-  margin-left: 22vh;
-}
-
-#clothes {
-  height: 100%;
-  width: 100%;
+.titles #fore {
+  margin-right: 250px;
 }
 
 .tapsaaf,
 .tapsoan {
   height: 25em;
-  width: 25em;
-  margin-left: -20vh;
-  margin-top: 6em;
 }
 
-#fore {
-  margin-top: 1vh;
-  /* margin-right: 50vh; */
+.forecast {
+  margin-left: 30px;
 }
 
-#forecast,
-#clothes {
-  margin-top: 15vh;
-}
-
-#forecast {
+.forecast,
+image {
   display: flex;
-  align-items: flex-start;
-  margin-left: -5em;
+  max-width: 100%;
+  height: auto;
 }
 
 h3 {
@@ -50,40 +30,81 @@ h3 {
   font-weight: bolder;
   color: rgb(33, 37, 41);
   text-shadow: rgb(170, 170, 170) 0px 4px 10px;
-  margin-top: 0;
-  margin-left: 15vh;
-}
-
-#futureImage {
-  height: 13em;
-  width: 13em;
 }
 
 h4 {
   color: chocolate;
-  font-size: 17px;
 }
 
-#clothes {
-  max-width: 35em;
-  max-height: 35em;
-  margin: 2em;
-}
-
-.taps {
+.getyer {
   color: orangered;
   font-size: 35px;
   font-weight: 600;
+  /* margin-left: 20px; */
   text-align: center;
-  margin-left: -6em;
 }
 
 .day {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 25em;
-  max-height: 14em;
-  margin-left: 0em;
   text-align: center;
+}
+
+.fore,
+.forecast {
+  display: none;
+  text-align: center;
+}
+
+.dress {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.fore {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 25px;
+  height: auto;
+  margin-right: 100px;
+}
+
+img {
+  margin: 20px;
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+.taps {
+  margin-top: -10px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.days {
+  max-width: 100%;
+  margin-right: 20px;
+}
+
+.mapcast,
+.days {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-wrap: nowrap; */
+  /* justify-content: center; */
+  justify-content: space-evenly;
+  /* align-items: center; */
+  align-items: stretch;
+  align-content: center;
+  max-height: 50%;
+}
+
+@media (min-width: 755px) {
+  .fore,
+  .forecast {
+    display: inherit;
+  }
+  .getyer {
+    margin-left: 20px;
+  }
 }

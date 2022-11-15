@@ -4,20 +4,39 @@ import "./Schpeel.css";
 const Schpeel = (props) => {
   return (
     <>
-      <div id="schpeel">
-        <div id="tapsaff">
-          <b> Taps-Aff (Scots Vernacular)</b> Literally "tops off." The removing
-          of one's shirt in the event of warm weather, a phenomenon rarely seen
-          in Glasgow. Now an expression describing good times being had.
+      <div className="schpeel">
+        <div className="tapsaff">
+          <b> Taps-Aff (Scots Vernacular)</b>{" "}
+          <i>
+            Literally "tops off." The removing of one's shirt in the event of
+            warm weather, a phenomenon rarely seen in Glasgow. Now an expression
+            describing good times being had.
+          </i>
         </div>
-        <div id="antonym">
-          <b>Antonym:</b> Taps-Oan, "tops on".
+        <div className="antonym">
+          <b>Antonym:</b>
+          <i> Taps-Oan, "tops on".</i>
         </div>
-        <div id="currentweather">
-          <b> Current Weather: {props.main}.</b>
+        <div className="currentweather">
+          <div>
+            <b> Current Weather: </b>
+          </div>
+          <div className="cweather">
+            <b>
+              <i>{props.main}</i>
+            </b>
+          </div>
         </div>
-        <div id="temperature">
-          <b>Temperature: {Math.round(props.temp)} °C.</b>
+        <div className="temperature">
+          <div className="temp">
+            <b>Temperature:</b>
+          </div>
+          <div className="numdeg">
+            <div className="number">
+              <b> {Math.round(props.temp)}</b>
+            </div>
+            <div className="degrees">°C.</div>
+          </div>
         </div>
       </div>
     </>
