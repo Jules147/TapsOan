@@ -1,7 +1,7 @@
 import React from "react";
-import "./Schpeel.css";
+import "./Text.css";
 
-const Schpeel = (props) => {
+const Text = (props) => {
   return (
     <>
       <div className="schpeel">
@@ -43,4 +43,4 @@ const Schpeel = (props) => {
   );
 };
 
-export default Schpeel;
+export default Text;

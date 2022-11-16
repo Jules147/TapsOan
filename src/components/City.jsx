@@ -1,7 +1,7 @@
 import React from "react";
-import "./Title.css";
+import "./City.css";
 
-const Title = (props) => {
+const City = (props) => {
   return (
     <>
       <div className="title">
@@ -11,4 +11,4 @@ const Title = (props) => {
   );
 };
 
-export default Title;
+export default City;

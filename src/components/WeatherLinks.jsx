@@ -1,7 +1,7 @@
 import React from "react";
-import "./Footer.css";
+import "./WeatherLinks.css";
 
-const Footer = () => {
+const WeatherLinks = () => {
   return (
     <footer>
       <div className="other">
@@ -16,4 +16,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default WeatherLinks;

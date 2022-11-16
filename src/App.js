@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Title from "./components/Title";
-import Schpeel from "./components/Schpeel";
-import Body from "./components/Body";
-import Bottom from "./components/Bottom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import City from "./components/City";
+import Text from "./components/Text";
+import Instruction from "./components/Instruction";
+import Search from "./components/Search";
+import WeatherLinks from "./components/WeatherLinks";
+import OnOff from "./components/OnOff";
 // ok to store getApiURL in config.js file?
 import { getApiURL } from "./config";
 
@@ -44,16 +44,16 @@ const App = () => {
   const { main, weather: w } = weather.list[0];
   return (
     <>
-      <Title input={input} />
-      <Header temp={main.temp} />
-      <Schpeel
+      <City input={input} />
+      <OnOff temp={main.temp} />
+      <Text
         main={w[0].main}
         // weather.main && weather.main.temp
         temp={main.temp}
       />
-      <Body weather={weather} />
-      <Bottom updateInput={updateInput} err={err} />
-      <Footer />
+      <Instruction weather={weather} />
+      <Search updateInput={updateInput} err={err} />
+      <WeatherLinks />
     </>
   );
 };

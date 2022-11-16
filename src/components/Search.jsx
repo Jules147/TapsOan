@@ -1,7 +1,7 @@
 import React from "react";
-import "./Bottom.css";
+import "./Search.css";
 
-const Bottom = (props) => {
+const Search = (props) => {
   return (
     <div className="bottom">
       {props.err === false ? (
@@ -24,4 +24,4 @@ const Bottom = (props) => {
   );
 };
 
-export default Bottom;
+export default Search;

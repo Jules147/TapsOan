@@ -1,5 +1,4 @@
 import React from "react";
-import "./Body.css";
 import Mist from "./images/mist.png";
 import BrokenClouds from "./images/brokenClouds.png";
 import ClearSky from "./images/clearSky.png";
@@ -16,7 +15,7 @@ import Thunderstorm from "./images/thunderstorm.png";
 import Clear from "./images/clear.png";
 import Tapsoan from "./images/tapsoan.svg";
 import Tapsaaf from "./images/tapsaaf.svg";
-import "./Body.css";
+import "./Instruction.css";
 import WeatherDay from "./WeatherDay";
 import { Fragment } from "react/cjs/react.production.min";
 
@@ -31,7 +30,7 @@ const days = [
   "Saturday",
 ];
 
-const Body = (props) => {
+const Instruction = (props) => {
   const imageMap = {
     Mist: Mist,
     BrokenClouds: BrokenClouds,
@@ -140,4 +139,4 @@ const Body = (props) => {
   );
 };
 
-export default Body;
+export default Instruction;

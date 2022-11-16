@@ -1,13 +1,15 @@
 import React from "react";
-import "./Header.css";
+import "./OnOff.css";
 
-const Header = (props) => {
+const OnOff = (props) => {
   return (
     <header>
+      {/* <div className="overflow"> */}
       <div className="taps">Taps</div>
       <div className="onOff">{props.temp < 15 ? "Oan" : "Aaf"}</div>
+      {/* </div> */}
     </header>
   );
 };
 
-export default Header;
+export default OnOff;
