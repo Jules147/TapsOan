@@ -33,3 +33,10 @@ header {
   /* from below for rules re iphone 6 */
   /* width: 50vw; */
 }
+
+@media (max-width: 600px) {
+  header,
+  .taps {
+    font-size: 20vw;
+  }
+}

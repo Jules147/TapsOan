@@ -108,3 +108,13 @@ img {
     margin-left: 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .getyer {
+    font-size: 25px;
+  }
+  img {
+    width: 70vw;
+    height: 70vh;
+  }
+}
