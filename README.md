@@ -1,4 +1,4 @@
-link to project: https://dainty-sprinkles-cac9a3.netlify.app
+[https://dainty-sprinkles-cac9a3.netlify.app] (https://dainty-sprinkles-cac9a3.netlify.app)
 
 # Getting Started with Create React App
 
