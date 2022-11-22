@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
 import City from "./components/City";
 import Text from "./components/Text";
 import Instruction from "./components/Instruction";
@@ -44,16 +43,18 @@ const App = () => {
   const { main, weather: w } = weather.list[0];
   return (
     <>
-      <City input={input} />
-      <OnOff temp={main.temp} />
-      <Text
-        main={w[0].main}
-        // weather.main && weather.main.temp
-        temp={main.temp}
-      />
-      <Instruction weather={weather} />
-      <Search updateInput={updateInput} err={err} />
-      <WeatherLinks />
+      <div className="bodyBorder">
+        <City input={input} />
+        <OnOff temp={main.temp} />
+        <Text
+          main={w[0].main}
+          // weather.main && weather.main.temp
+          temp={main.temp}
+        />
+        <Instruction weather={weather} />
+        <Search updateInput={updateInput} err={err} />
+        <WeatherLinks />
+      </div>
     </>
   );
 };
