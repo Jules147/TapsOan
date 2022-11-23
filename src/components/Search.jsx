@@ -12,6 +12,7 @@ const Search = (props) => {
 
       <input
         type="text"
+        enterkeyhint="go"
         name="searchbar"
         placeholder="Add city and 'Enter'"
         onKeyDown={(event) => {
