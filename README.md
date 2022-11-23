@@ -1,4 +1,4 @@
-[https://juliantapsoan.netlify.app/] (https://juliantapsoan.netlify.app/)
+[https://julianstapsoan.netlify.app] (https://julianstapsoan.netlify.app)
 
 # Getting Started with Create React App
 
